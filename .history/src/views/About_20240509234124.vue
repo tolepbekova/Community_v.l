@@ -28,7 +28,6 @@
         <div class="column">
           <h5>AI can be inaccurate</h5>
           <h5>AI can be inaccurate</h5>
-          
         </div>
       </div>
       <div class="ai1">
