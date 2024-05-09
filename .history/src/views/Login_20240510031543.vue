@@ -1,46 +1,54 @@
 <template>
     <div>
+
         <br><br><br>
+
         <div class="abrow">
-            <br>
-            <br>
+            <br><br>
             <div class="abcolu">
                 <img src="../assets/logo/finalicon13_1.svg" alt="">
             </div>
             <div class="abcolu">
-                <h1>Contact Us</h1>
-                <div class="abp">
-                    <p>Dear users!</p>
-                    <p>Here you can write inquiries on technical issues, reviews and recommend improvements to the Site
-                    </p>
-                    <br>
-                </div>
-                <div class="inputs">
-                    <form id="contactForm">
-                        <label for="name">Name</label>
-                        <br>
-                        <input type="text" name="name" id="name" placeholder="">
-                        <br>
-                        <label for="mail">Email</label>
-                        <br>
-                        <input type="email" name="mail" id="mail" placeholder="">
-                        <br>
-                        <label for="message">Message</label>
-                        <br>
-                        <input type="text" name="message" id="message">
-                        <br><br><br>
-                        <button class="btn" @click="sendMessage">Send</button>
-                    </form>
-                </div>
+                <h1>Welcome Back</h1>
+                <br>
+                <input type="email" v-model:value="info.email" placeholder="SDU email address">
+                <br><br>
+                <input type="password" v-model:value="info.password" placeholder="Password" required>
+                <br><br>
+                <router-link to="getstart"><button class="btn" @click="login()">Continue</button></router-link>
+                <br><br>
+                <p>Don't have an account? <router-link to="sign in">Sign up</router-link></p>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-    name: 'HeaderSection' // You can name it as per your requirement
-}
+    data() {
+        return {
+            token: "",
+            info: {
+                email: "",
+                password: "",
+            },
+        };
+    },
+    methods: {
+        login() {
+            axios
+                .post(
+                    ` https://sschat-production.up.railway.app/accounts/auth/token/login/`,
+                    this.info
+                )
+                .then((res) => {
+                    this.token = res.auth_token;
+                });
+        },
+    },
+}; 
 </script>
 
 <style scoped>
@@ -87,7 +95,7 @@ h1 {
     margin: 20px auto;
     display: block;
     text-align: center;
-    margin-left: 450px;
+    margin-left: 650px;
 }
 
 .abcolu {
@@ -101,10 +109,12 @@ img {
     max-height: 99px;
 }
 
+
 .abp {
     margin: 0 auto;
     display: block;
     width: 670px;
+    height: 100px;
 }
 
 .icon {
@@ -123,7 +133,7 @@ img {
 input {
     border-radius: 20px;
     width: 350px;
-    height: 45px;
+    height: 50px;
     border-color: rgba(33, 33, 83, 1);
 }
 
@@ -159,8 +169,5 @@ a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
 
-}
-#message {
-    height: 60px;
 }
 </style>

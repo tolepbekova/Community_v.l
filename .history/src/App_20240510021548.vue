@@ -15,16 +15,16 @@ import './assets/base.css'
                     <v-spacer></v-spacer>
 
                     <span><router-link to="/getstart">Chat</router-link></span>
-                        <span><router-link to="/contact">Contact us</router-link></span>
-                        <span><router-link to="/auth">Login</router-link></span>
+                    <span><router-link to="/contact">Contact us</router-link></span>
+                    <span><router-link to="/auth">Login</router-link></span>
 
-                    
+
                 </v-toolbar>
             </v-card>
         </v-app>
-         <router-view />
+        <router-view />
     </div>
-   
+
 </template>
 
 <style>
@@ -34,7 +34,8 @@ import './assets/base.css'
 }
 
 #header {
-    display: flex; 
+
+    display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -55,7 +56,8 @@ import './assets/base.css'
     align-items: center;
     justify-content: center;
 }
-span  {
+
+span {
     list-style: none;
     padding: 0 20px;
     text-decoration: none;

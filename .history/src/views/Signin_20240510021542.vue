@@ -1,16 +1,16 @@
 <template>
   <div>
 
+
+    <br><br><br><br>
     <section id="hero">
-      <br><br><br>
       <div class="abrow">
-        <br><br>
         <div class="abcolu">
-          <img src="../assets/logo/finalicon13_1.svg" alt="">
+          <img src="../assets/logo/log.svg" alt="">
         </div>
+
         <div class="abcolu">
           <h1>Create your account</h1>
-          <br>
           <form id="signin-form" @submit.prevent="signIn" name="myForm" method="post">
             <input type="email" v-model="email" placeholder="SDU email address" required>
             <br><br>
@@ -95,10 +95,9 @@ h1 {
 }
 
 .abrow {
-  margin: 20px auto;
+  margin: 0 auto;
   display: block;
   text-align: center;
-  margin-left: 550px;
 }
 
 .abcolu {
@@ -108,10 +107,8 @@ h1 {
 }
 
 img {
-  max-width: 99px;
-  max-height: 99px;
+  width: 115px;
 }
-
 
 .abp {
   margin: 0 auto;
@@ -135,8 +132,8 @@ img {
 
 input {
   border-radius: 20px;
-  width: 350px;
-  height: 50px;
+  width: 280px;
+  height: 45px;
   border-color: rgba(33, 33, 83, 1);
 }
 

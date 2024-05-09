@@ -2,8 +2,6 @@
     <div>
         <br><br><br>
         <div class="abrow">
-            <br>
-            <br>
             <div class="abcolu">
                 <img src="../assets/logo/finalicon13_1.svg" alt="">
             </div>
@@ -13,7 +11,6 @@
                     <p>Dear users!</p>
                     <p>Here you can write inquiries on technical issues, reviews and recommend improvements to the Site
                     </p>
-                    <br>
                 </div>
                 <div class="inputs">
                     <form id="contactForm">
@@ -97,14 +94,14 @@ h1 {
 }
 
 img {
-    max-width: 99px;
-    max-height: 99px;
+    width: 115px;
 }
 
 .abp {
     margin: 0 auto;
     display: block;
     width: 670px;
+    height: 100px;
 }
 
 .icon {
@@ -122,7 +119,7 @@ img {
 
 input {
     border-radius: 20px;
-    width: 350px;
+    width: 280px;
     height: 45px;
     border-color: rgba(33, 33, 83, 1);
 }
@@ -159,8 +156,5 @@ a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
 
-}
-#message {
-    height: 60px;
 }
 </style>

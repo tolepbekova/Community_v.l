@@ -37,7 +37,7 @@ export default {
       axios.defaults.withCredentials = false
       console.log(this.userInput)
       // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-      axios.post(`http://qabot-production.up.railway.app/process_query`, { text: this.userInput })
+      axios.post(`https://qabot-production.up.railway.app/process_query`, { text: this.userInput })
         .then(response => {
           if (response) {
             console.log('Ответ от сервера:', response);

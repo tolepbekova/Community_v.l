@@ -1,7 +1,7 @@
 <template>
   <div>
     <br>
-    <br><br><br>
+    <br><br>
     <div class="chat-container">
       <div class="chat-box" id="chat-box">
         <p v-for="(message, index) in messages" :key="index"
@@ -37,7 +37,7 @@ export default {
       axios.defaults.withCredentials = false
       console.log(this.userInput)
       // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-      axios.post(`http://qabot-production.up.railway.app/process_query`, { text: this.userInput })
+      axios.post(`https://qabot-production.up.railway.app/process_query/posts/api/v1/get_keywords`, { text: this.userInput })
         .then(response => {
           if (response) {
             console.log('Ответ от сервера:', response);
@@ -130,9 +130,7 @@ h1 {
 .chat-container {
   width: 900px;
   height: 550px;
-  margin: 35px auto;
-  margin-left: 350px;
-  margin-right: 350px;
+  margin: 20px auto;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

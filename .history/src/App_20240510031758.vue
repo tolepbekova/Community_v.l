@@ -34,7 +34,7 @@ import './assets/base.css'
 }
 
 #header {
-    display: flex; 
+    
     width: 100%;
     flex-direction: column;
     align-items: center;

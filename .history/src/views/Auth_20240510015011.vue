@@ -5,7 +5,6 @@
         <br><br><br><br>
 
         <div class="abrow">
-            <br><br>
             <div class="abcolumn">
                 <img src="../assets/logo/finalicon13_1.svg" alt="Final Icon">
             </div>

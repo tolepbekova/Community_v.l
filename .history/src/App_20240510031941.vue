@@ -14,9 +14,9 @@ import './assets/base.css'
 
                     <v-spacer></v-spacer>
 
-                    <span><router-link to="/getstart">Chat</router-link></span>
-                        <span><router-link to="/contact">Contact us</router-link></span>
-                        <span><router-link to="/auth">Login</router-link></span>
+                    <h6><router-link to="/getstart">Chat</router-link></h6>
+                        <h6><router-link to="/contact">Contact us</router-link></h6>
+                        <h6><router-link to="/auth">Login</router-link></h6>
 
                     
                 </v-toolbar>

@@ -122,7 +122,7 @@ img {
 
 input {
     border-radius: 20px;
-    width: 350px;
+    width: 320px;
     height: 45px;
     border-color: rgba(33, 33, 83, 1);
 }
