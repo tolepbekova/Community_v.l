@@ -5,7 +5,7 @@
 
         <div class="abrow">
             <div class="abcolu">
-                <img src="../assets/logo/finalicon13_1.svg" alt="">
+                <img src="../assets//logo/finalicon13_1.png" alt="">
             </div>
             <div class="abcolu">
                 <h1>Welcome Back</h1>
