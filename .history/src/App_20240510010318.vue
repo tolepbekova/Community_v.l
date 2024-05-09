@@ -39,7 +39,7 @@ import './assets/base.css'
     width: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
     margin-left: 0px;
     margin-right: 0px;

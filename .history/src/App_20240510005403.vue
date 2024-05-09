@@ -7,7 +7,7 @@ import './assets/base.css'
 <template>
     <div id="app">
         <v-app id="header">
-            <v-card color="grey lighten-4" flat height="100px" tile>
+            <v-card color="grey lighten-4" flat height="150px" tile>
                 <v-toolbar dense>
 
                     <a href="about.html"><img class="logo" src="../src/assets/logo/log.svg"></a>
@@ -34,12 +34,10 @@ import './assets/base.css'
 }
 
 #header {
-    
-    display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
     margin-left: 0px;
     margin-right: 0px;

@@ -7,18 +7,30 @@ import './assets/base.css'
 <template>
     <div id="app">
         <v-app id="header">
-            <v-card color="grey lighten-4" flat height="100px" tile>
+            <v-card color="grey lighten-4" flat height="200px" tile>
                 <v-toolbar dense>
+                    <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
+                    <v-toolbar-title>Title</v-toolbar-title>
                     <a href="about.html"><img class="logo" src="../src/assets/logo/log.svg"></a>
 
                     <v-spacer></v-spacer>
 
-                    <span><router-link to="/getstart">Chat</router-link></span>
-                        <span><router-link to="/contact">Contact us</router-link></span>
-                        <span><router-link to="/auth">Login</router-link></span>
+                    <li><router-link to="/getstart">Chat</router-link></li>
+                        <li><router-link to="/contact">Contact us</router-link></li>
+                        <li><router-link to="/auth">Login</router-link></li>
 
-                    
+                    <v-btn icon>
+                        <v-icon>mdi-magnify</v-icon>
+                    </v-btn>
+
+                    <v-btn icon>
+                        <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+
+                    <v-btn icon>
+                        <v-icon>mdi-dots-vertical</v-icon>
+                    </v-btn>
                 </v-toolbar>
             </v-card>
         </v-app>
@@ -34,12 +46,10 @@ import './assets/base.css'
 }
 
 #header {
-    
-    display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
     margin-left: 0px;
     margin-right: 0px;
@@ -56,7 +66,8 @@ import './assets/base.css'
     align-items: center;
     justify-content: center;
 }
-span  {
+
+#navbar li {
     list-style: none;
     padding: 0 20px;
     text-decoration: none;
@@ -65,7 +76,7 @@ span  {
     transition: 0.3s ease;
 }
 
-#navbar li :hover {
+#navnar li :hover {
     color: rgb(237, 237, 167);
 }
 </style>
