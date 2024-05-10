@@ -91,8 +91,8 @@ export default {
 
 .logo {
     width: 270px;
-    height: 87px;
-    margin-left: 230px;пш
+    height: 77px;
+    margin-left: 130px ;
 }
 
 #navbar {

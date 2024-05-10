@@ -16,47 +16,40 @@
                 </v-toolbar>
             </v-card>
         </v-app>
-        <br><br><br>
+
+        <br><br><br><br>
+
         <div class="abrow">
-            <br>
-            <br>
-            <div class="abcolu">
-               
+            <br><br>
+            <div class="abcolumn">
+                
                 <img class="final" src="../assets/logo/finalicon13_1.svg" alt="">
             </div>
-            <div class="abcolu">
-                <h1>Contact Us</h1>
-                <div class="abp">
-                    <p>Dear users!</p>
-                    <p>Here you can write inquiries on technical issues, reviews and recommend improvements to the Site
-                    </p>
-                    <br>
-                </div>
-                <div class="inputs">
-                    <form id="contactForm">
-                        <label for="name">Name</label>
-                        <br>
-                        <input type="text" name="name" id="name" placeholder="">
-                        <br>
-                        <label for="mail">Email</label>
-                        <br>
-                        <input type="email" name="mail" id="mail" placeholder="">
-                        <br>
-                        <label for="message">Message</label>
-                        <br>
-                        <input type="text" name="message" id="message">
-                        <br><br><br>
-                        <button class="btn" @click="sendMessage">Send</button>
-                    </form>
-                </div>
+            <div class="abcolumn">
+                <h1>Let’s create</h1>
+                <h3>Get Started</h3>
+
+                <br>
+                <router-link to="/sign"> <button class="lbtn1"> Sign in</button></router-link>
+                <br>
+                <router-link to="/"><button class="lbtn2">Log in</button></router-link>
+                <br><br><br>
             </div>
         </div>
+
+        <!-- <v-footer class="section">
+
+            <img src="../assets/logo/logo-white.svg" alt="SDU University" width="100" height="100">
+            <br><br>
+            <span class="elementor-icon-list-text">2024 All rights reserved</span>
+
+        </v-footer> -->
     </div>
 </template>
 
 <script>
 export default {
-    name: 'HeaderSection' // You can name it as per your requirement
+    name: 'Auth'
 }
 </script>
 
@@ -84,8 +77,8 @@ h1 {
 
 .logo {
     width: 270px;
-    height: 87px;
-    margin-left: 230px;
+    height: 77px;
+    margin-left: 130px ;
 }
 
 #navbar {
@@ -94,9 +87,8 @@ h1 {
     justify-content: center;
 }
 .fir {
-  margin-left: 430px;
+  margin-left: 130px;
 }
-
 span  {
     list-style: none;
     padding: 0 20px;
@@ -109,14 +101,11 @@ span  {
 #navbar li :hover {
     color: rgba(33, 33, 83, 1);
 }
-
-
-.abrow {
-  margin: 20px auto;
-  display: block;
-  text-align: center;
-  margin-left: 450px;
+h1 {
+  color: rgba(33, 33, 83, 1);
 }
+
+
 
 .abcolu {
   margin: 0 auto;
@@ -130,11 +119,29 @@ span  {
 }
 
 
+.abrow {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-left: 650px;
+}
+
+.abcolumn {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    color: rgba(33, 33, 83, 1);
+}
+
+img {
+    width: 109px;
+}
 
 .abp {
     margin: 0 auto;
     display: block;
     width: 670px;
+    height: 100px;
 }
 
 .icon {
@@ -142,29 +149,23 @@ span  {
     height: 24px;
 }
 
-.btn {
+.section {
+    border-radius: 50px 50px 0 0;
     background-color: rgba(33, 33, 83, 1);
-    border-radius: 20px;
-    width: 280px;
-    height: 50px;
-    color: #ffffff;
-}
-
-input {
-    border-radius: 20px;
-    width: 350px;
-    height: 45px;
-    border-color: rgba(33, 33, 83, 1);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 19%;
 }
 
 a {
-    padding: 0 20px;
-    text-decoration: none;
-    font-size: 30px;
     color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+    font-style: none;
+    text-decoration: none;
 }
-
 .lbtn1 {
     margin: 0 auto;
     display: block;
@@ -178,9 +179,8 @@ a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
 
-}
-
-.lbtn2 {
+  }
+  .lbtn2 {
     margin: 0 auto;
     display: block;
     width: 266px;
@@ -190,11 +190,8 @@ a {
     background-color: rgba(253, 211, 149, 1);
     border: none;
     font-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
-
-}
-#message {
-    height: 60px;
-}
+    
+  }
 </style>

@@ -84,8 +84,8 @@ h1 {
 
 .logo {
     width: 270px;
-    height: 87px;
-    margin-left: 230px;
+    height: 77px;
+    margin-left: 430px ;
 }
 
 #navbar {
@@ -94,7 +94,7 @@ h1 {
     justify-content: center;
 }
 .fir {
-  margin-left: 480px;
+  margin-left: 130px;
 }
 span  {
     list-style: none;

@@ -92,7 +92,7 @@ export default {
 .logo {
     width: 270px;
     height: 87px;
-    margin-left: 230px;пш
+    margin-left: 230px;
 }
 
 #navbar {

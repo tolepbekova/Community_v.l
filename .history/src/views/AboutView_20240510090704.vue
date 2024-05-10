@@ -53,7 +53,7 @@ export default {
       axios.defaults.withCredentials = false
       console.log(this.userInput)
       // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-      axios.post(`http://qabot-production.up.railway.app/process_query`, { text: this.userInput })
+      axios.post(`http://qabot-production.up.railway.app/process_query`, { question: this.userInput })
         .then(response => {
           if (response) {
             console.log('Ответ от сервера:', response);
@@ -131,8 +131,8 @@ h1 {
 
 .logo {
     width: 270px;
-    height: 87px;
-    margin-left: 230px;
+    height: 77px;
+    margin-left: 130px ;
 }
 
 #navbar {
@@ -156,7 +156,7 @@ h1 {
   color: rgba(33, 33, 83, 1);
 }
 .fir {
-  margin-left: 480px;
+  margin-left: 130px;
 }
 
 
