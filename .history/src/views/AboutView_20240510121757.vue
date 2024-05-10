@@ -20,12 +20,11 @@
     <br><br><br>
     <div class="chat-container">
       <div class="chat-box" id="chat-box">
-        <div class="user-message">
+        <div class="userInput">
           {{ userInput }}
         </div>
-        <div class="bot-message">
           {{ botMessage }}
-        </div>
+
         <!-- <p v-for="(message, index) in dataList" :key="index"
           :class="{ 'user-message': message.type === 'user', 'bot-message': message.type === 'bot' }">{{ message
           }}</p> -->
@@ -221,7 +220,7 @@ a {
   margin-right: 20px;
 }
 
-.user-message  {
+.user-message p {
   margin: 10px 0;
   margin-left: 400px;
 
@@ -236,10 +235,10 @@ a {
   border-radius: 15px 15px 15px 0px;
   min-height: 30px;
   padding: 15px 0;
-  margin-left: 90px;
+  margin-left: 20px;
 }
 
-.bot-message  {
+.bot-message p {
   margin: 10px 0;
   margin-right: 400px;
 

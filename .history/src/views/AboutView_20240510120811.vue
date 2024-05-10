@@ -20,12 +20,8 @@
     <br><br><br>
     <div class="chat-container">
       <div class="chat-box" id="chat-box">
-        <div class="user-message">
-          {{ userInput }}
-        </div>
-        <div class="bot-message">
           {{ botMessage }}
-        </div>
+
         <!-- <p v-for="(message, index) in dataList" :key="index"
           :class="{ 'user-message': message.type === 'user', 'bot-message': message.type === 'bot' }">{{ message
           }}</p> -->
@@ -67,14 +63,18 @@ export default {
         .then(response => {
           if (response) {
             console.log('Ответ от сервера:', response);
-            this.botMessage = response.data.response.content;
             this.dataList = response.data.response.content;
-           
+            console.log(this.dataList)
+            this.addUserMessage(this.userInput);
+            this.userInput = ''; // Clear input field
           }
 
 
           // Simulate bot response after a short delay
-         
+          setTimeout(() => {
+            const botResponse = getResponse();
+            this.botMessage = botResponse;
+          }, 500);
 
         })
         .catch(error => {
@@ -84,7 +84,21 @@ export default {
 
     },
     
-   
+    addUserMessage(message) {
+      const chatBox = document.getElementById('chat-box');
+      const userMessage = document.createElement('p');
+      userMessage.textContent = message;
+      userMessage.classList.add('user-message');
+      chatBox.appendChild(userMessage);
+    },
+
+    addBotMessage(message) {
+      const chatBox = document.getElementById('chat-box');
+      const botMessage = document.createElement('');
+      botMessage.textContent = message;
+      botMessage.classList.add('bot-message');
+      chatBox.appendChild(botMessage);
+    },
     getResponse() {
       const chatResponses = [
         "Hello! How can I assist you today?",
@@ -221,7 +235,7 @@ a {
   margin-right: 20px;
 }
 
-.user-message  {
+.user-message p {
   margin: 10px 0;
   margin-left: 400px;
 
@@ -236,10 +250,10 @@ a {
   border-radius: 15px 15px 15px 0px;
   min-height: 30px;
   padding: 15px 0;
-  margin-left: 90px;
+  margin-left: 20px;
 }
 
-.bot-message  {
+.bot-message p {
   margin: 10px 0;
   margin-right: 400px;
 

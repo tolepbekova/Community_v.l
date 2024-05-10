@@ -236,7 +236,8 @@ a {
   border-radius: 15px 15px 15px 0px;
   min-height: 30px;
   padding: 15px 0;
-  margin-left: 90px;
+  margin-left: 20px;
+  margin-left: 20px;
 }
 
 .bot-message  {
