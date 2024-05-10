@@ -29,20 +29,20 @@
                 <h3>Get Started</h3>
 
                 <br>
-                <router-link to="/sign"> <button class="lbtn1"> Sign in</button></router-link>
+                <router-link to="/sign"><button class="lbtn1">Sign in</button></router-link>
                 <br>
                 <router-link to="/login"><button class="lbtn2">Log in</button></router-link>
                 <br><br><br>
             </div>
         </div>
 
-        <!-- <v-footer class="section">
+        <v-footer class="section">
 
             <img src="../assets/logo/logo-white.svg" alt="SDU University" width="100" height="100">
             <br><br>
             <span class="elementor-icon-list-text">2024 All rights reserved</span>
 
-        </v-footer> -->
+        </v-footer>
     </div>
 </template>
 
@@ -53,73 +53,10 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-    color: rgba(33, 33, 83, 1);
-}
-
-#app {
-    display: flex;
-
-}
-
-#header {
-    display: flex; 
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    color:rgba(33, 33, 83, 1) ;
-}
-
-.logo {
-    width: 270px;
-    height: 77px;
-}
-
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-span  {
-    list-style: none;
-    padding: 0 20px;
-    text-decoration: none;
-    font-size: 30px;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
-}
-
-#navbar li :hover {
-    color: rgba(33, 33, 83, 1);
-}
-h1 {
-  color: rgba(33, 33, 83, 1);
-}
-
-
-
-.abcolu {
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-}
-
-img {
-  max-width: 99px;
-  max-height: 99px;
-}
-
-
 .abrow {
     margin: 0 auto;
     display: block;
     text-align: center;
-    margin-left: 650px;
 }
 
 .abcolumn {
@@ -162,32 +99,4 @@ a {
     font-style: none;
     text-decoration: none;
 }
-.lbtn1 {
-    margin: 0 auto;
-    display: block;
-    width: 266px;
-    height: 48px;
-    border-radius: 30px;
-    color: rgba(33, 33, 83, 1);
-    background-color: rgba(253, 211, 149, 1);
-    border: none;
-    font-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-
-  }
-  .lbtn2 {
-    margin: 0 auto;
-    display: block;
-    width: 266px;
-    height: 48px;
-    border-radius: 30px;
-    color: rgba(33, 33, 83, 1);
-    background-color: rgba(253, 211, 149, 1);
-    border: none;
-    font-size: 15px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    
-  }
 </style>

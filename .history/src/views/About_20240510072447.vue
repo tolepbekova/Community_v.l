@@ -61,52 +61,38 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-    color: rgba(33, 33, 83, 1);
-}
-
-#app {
-    display: flex;
-
-}
-
 #header {
-    display: flex; 
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    color:rgba(33, 33, 83, 1) ;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 80px;
 }
 
-.logo {
-    width: 270px;
-    height: 77px;
+#header img {
+  width: 218px;
+  height: 77px;
 }
 
 #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-span  {
-    list-style: none;
-    padding: 0 20px;
-    text-decoration: none;
-    font-size: 30px;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#navbar li :hover {
-    color: rgba(33, 33, 83, 1);
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
 }
-h1 {
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 30px;
   color: rgba(33, 33, 83, 1);
+  transition: 0.3s ease;
+}
+
+#navnar li a:hover {
+  color: rgb(237, 237, 167);
 }
 
 .abcolumn {
@@ -137,11 +123,6 @@ img {
   display: block;
   width: 530px;
   text-align: center;
-}
-a {
-    color: rgba(33, 33, 83, 1);
-    font-style: none;
-    text-decoration: none;
 }
 
 .icon {

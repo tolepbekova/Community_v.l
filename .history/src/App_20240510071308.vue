@@ -6,7 +6,22 @@ import './assets/base.css'
 
 <template>
     <div id="app">
-        
+        <!-- <v-app id="header">
+            <v-card color="grey lighten-4" flat height="100px" tile>
+                <v-toolbar dense>
+
+                  <router-link   to="/home"> <img class="logo" src="../src/assets/logo/log.svg"></router-link>
+
+                    <v-spacer></v-spacer>
+
+                    <span><router-link to="/getstart">Chat</router-link></span>
+                        <span><router-link to="/contact">Contact us</router-link></span>
+                        <span><router-link to="/auth">Login</router-link></span>
+
+                    
+                </v-toolbar>
+            </v-card>
+        </v-app> -->
          <router-view />
     </div>
    

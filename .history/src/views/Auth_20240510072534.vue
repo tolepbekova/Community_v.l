@@ -29,20 +29,20 @@
                 <h3>Get Started</h3>
 
                 <br>
-                <router-link to="/sign"> <button class="lbtn1"> Sign in</button></router-link>
+                <router-link to="/sign"><button class="lbtn1">Sign in</button></router-link>
                 <br>
                 <router-link to="/login"><button class="lbtn2">Log in</button></router-link>
                 <br><br><br>
             </div>
         </div>
 
-        <!-- <v-footer class="section">
+        <v-footer class="section">
 
             <img src="../assets/logo/logo-white.svg" alt="SDU University" width="100" height="100">
             <br><br>
             <span class="elementor-icon-list-text">2024 All rights reserved</span>
 
-        </v-footer> -->
+        </v-footer>
     </div>
 </template>
 
@@ -102,6 +102,12 @@ h1 {
 }
 
 
+.abrow {
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+  margin-left: 550px;
+}
 
 .abcolu {
   margin: 0 auto;
@@ -119,7 +125,6 @@ img {
     margin: 0 auto;
     display: block;
     text-align: center;
-    margin-left: 650px;
 }
 
 .abcolumn {
@@ -162,32 +167,4 @@ a {
     font-style: none;
     text-decoration: none;
 }
-.lbtn1 {
-    margin: 0 auto;
-    display: block;
-    width: 266px;
-    height: 48px;
-    border-radius: 30px;
-    color: rgba(33, 33, 83, 1);
-    background-color: rgba(253, 211, 149, 1);
-    border: none;
-    font-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-
-  }
-  .lbtn2 {
-    margin: 0 auto;
-    display: block;
-    width: 266px;
-    height: 48px;
-    border-radius: 30px;
-    color: rgba(33, 33, 83, 1);
-    background-color: rgba(253, 211, 149, 1);
-    border: none;
-    font-size: 15px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    
-  }
 </style>

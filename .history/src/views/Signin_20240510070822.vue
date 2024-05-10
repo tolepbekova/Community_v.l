@@ -6,7 +6,7 @@
             <v-card color="grey lighten-4" flat height="100px" tile>
                 <v-toolbar dense>
 
-                  <router-link   to="/home"> <img class="logo" src="../assets/logo/log.svg"></router-link>
+                  <router-link   to="/home"> <img class="logo" src="../src/assets/logo/log.svg"></router-link>
 
                     <v-spacer></v-spacer>
 
@@ -35,7 +35,7 @@
             <button class="btn" type="submit">Continue</button>
           </form>
           <br><br>
-          <p>Already have an account? <router-link to="login">Login</router-link></p>
+          <p>Already have an account? <router-link to="log">Login</router-link></p>
         </div>
       </div>
     </section>
@@ -71,50 +71,44 @@ export default {
 </script>
 
 <style scoped>
-#app {
-    display: flex;
-
-}
-
-#header {
-    display: flex; 
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    color:rgba(33, 33, 83, 1) ;
-}
-
-.logo {
-    width: 270px;
-    height: 77px;
-}
-
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-span  {
-    list-style: none;
-    padding: 0 20px;
-    text-decoration: none;
-    font-size: 30px;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
-}
-
-#navbar li :hover {
-    color: rgba(33, 33, 83, 1);
-}
 h1 {
   color: rgba(33, 33, 83, 1);
 }
 
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 80px;
+
+}
+
+#header img {
+  width: 218px;
+  height: 77px;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 30px;
+  color: rgba(33, 33, 83, 1);
+  transition: 0.3s ease;
+}
+
+#navnar li a:hover {
+  color: rgb(237, 237, 167);
+}
 
 .abrow {
   margin: 20px auto;
@@ -163,10 +157,7 @@ input {
 }
 
 a {
-   padding: 0 20px;
-    text-decoration: none;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+  color: gold;
 }
 
 .lbtn1 {
@@ -197,8 +188,5 @@ a {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
 
-}
-p {
-  font-weight: 100;
 }
 </style>

@@ -172,10 +172,7 @@ input {
 }
 
 a {
-    padding: 0 20px;
-    text-decoration: none;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+    color: gold;
 }
 
 .lbtn1 {

@@ -35,7 +35,7 @@
             <button class="btn" type="submit">Continue</button>
           </form>
           <br><br>
-          <p>Already have an account? <router-link to="login">Login</router-link></p>
+          <p>Already have an account? <router-link to="log">Login</router-link></p>
         </div>
       </div>
     </section>
@@ -197,8 +197,5 @@ a {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
 
-}
-p {
-  font-weight: 100;
 }
 </style>

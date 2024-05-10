@@ -174,6 +174,7 @@ input {
 a {
     padding: 0 20px;
     text-decoration: none;
+    font-size: 30px;
     color: rgba(33, 33, 83, 1);
     transition: 0.3s ease;
 }

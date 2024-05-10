@@ -35,7 +35,7 @@
             <button class="btn" type="submit">Continue</button>
           </form>
           <br><br>
-          <p>Already have an account? <router-link to="login">Login</router-link></p>
+          <p>Already have an account? <router-link to="log">Login</router-link></p>
         </div>
       </div>
     </section>
@@ -163,10 +163,7 @@ input {
 }
 
 a {
-   padding: 0 20px;
-    text-decoration: none;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+  color: gold;
 }
 
 .lbtn1 {
@@ -197,8 +194,5 @@ a {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
 
-}
-p {
-  font-weight: 100;
 }
 </style>

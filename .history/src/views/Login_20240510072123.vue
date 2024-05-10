@@ -72,26 +72,16 @@ h1 {
     color: rgba(33, 33, 83, 1);
 }
 
-#app {
-    display: flex;
-
-}
-
 #header {
-    display: flex; 
-    width: 100%;
-    flex-direction: column;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    color:rgba(33, 33, 83, 1) ;
+    justify-content: space-around;
+    padding: 20px 80px;
+
 }
 
-.logo {
-    width: 270px;
+#header img {
+    width: 218px;
     height: 77px;
 }
 
@@ -100,47 +90,39 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-span  {
+
+#navbar li {
     list-style: none;
     padding: 0 20px;
+}
+
+#navbar li a {
     text-decoration: none;
     font-size: 30px;
     color: rgba(33, 33, 83, 1);
     transition: 0.3s ease;
 }
 
-#navbar li :hover {
-    color: rgba(33, 33, 83, 1);
+#navnar li a:hover {
+    color: rgb(237, 237, 167);
 }
-h1 {
-  color: rgba(33, 33, 83, 1);
-}
-
 
 .abrow {
-  margin: 20px auto;
-  display: block;
-  text-align: center;
-  margin-left: 550px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    margin-left: 550px;
 }
 
 .abcolu {
-  margin: 0 auto;
-  display: block;
-  text-align: center;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
 }
 
 img {
-  max-width: 99px;
-  max-height: 99px;
-}
-
-
-.abp {
-  margin: 0 auto;
-  display: block;
-  width: 670px;
-  height: 100px;
+    max-width: 99px;
+    max-height: 99px;
 }
 
 
@@ -172,10 +154,7 @@ input {
 }
 
 a {
-    padding: 0 20px;
-    text-decoration: none;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+    color: gold;
 }
 
 .lbtn1 {

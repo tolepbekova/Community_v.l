@@ -17,54 +17,39 @@
             </v-card>
         </v-app>
 
-        <br><br><br>
+        <br><br><br><br>
 
         <div class="abrow">
             <br><br>
-            <div class="abcolu">
-                <img src="../assets/logo/finalicon13_1.svg" alt="">
+            <div class="abcolumn">
+                <img src="../assets/logo/finalicon13_1.svg" alt="Final Icon">
             </div>
-            <div class="abcolu">
-                <h1>Welcome Back</h1>
+            <div class="abcolumn">
+                <h1>Let’s create</h1>
+                <h3>Get Started</h3>
+
                 <br>
-                <input type="email" v-model:value="info.email" placeholder="SDU email address">
-                <br><br>
-                <input type="password" v-model:value="info.password" placeholder="Password" required>
-                <br><br>
-                <router-link to="getstart"><button class="btn" @click="login()">Continue</button></router-link>
-                <br><br>
-                <p>Don't have an account? <router-link to="sign in">Sign up</router-link></p>
+                <router-link to="/sign"><button class="lbtn1">Sign in</button></router-link>
+                <br>
+                <router-link to="/login"><button class="lbtn2">Log in</button></router-link>
+                <br><br><br>
             </div>
         </div>
+
+        <!-- <v-footer class="section">
+
+            <img src="../assets/logo/logo-white.svg" alt="SDU University" width="100" height="100">
+            <br><br>
+            <span class="elementor-icon-list-text">2024 All rights reserved</span>
+
+        </v-footer> -->
     </div>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
-    data() {
-        return {
-            token: "",
-            info: {
-                email: "",
-                password: "",
-            },
-        };
-    },
-    methods: {
-        login() {
-            axios
-                .post(
-                    ` https://sschat-production.up.railway.app/accounts/auth/token/login/`,
-                    this.info
-                )
-                .then((res) => {
-                    this.token = res.auth_token;
-                });
-        },
-    },
-}; 
+    name: 'Auth'
+}
 </script>
 
 <style scoped>
@@ -117,12 +102,6 @@ h1 {
 }
 
 
-.abrow {
-  margin: 20px auto;
-  display: block;
-  text-align: center;
-  margin-left: 550px;
-}
 
 .abcolu {
   margin: 0 auto;
@@ -136,13 +115,23 @@ img {
 }
 
 
-.abp {
-  margin: 0 auto;
-  display: block;
-  width: 670px;
-  height: 100px;
+.abrow {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-left: 650px;
 }
 
+.abcolumn {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    color: rgba(33, 33, 83, 1);
+}
+
+img {
+    width: 109px;
+}
 
 .abp {
     margin: 0 auto;
@@ -156,28 +145,23 @@ img {
     height: 24px;
 }
 
-.btn {
+.section {
+    border-radius: 50px 50px 0 0;
     background-color: rgba(33, 33, 83, 1);
-    border-radius: 20px;
-    width: 280px;
-    height: 50px;
-    color: #ffffff;
-}
-
-input {
-    border-radius: 20px;
-    width: 350px;
-    height: 50px;
-    border-color: rgba(33, 33, 83, 1);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 19%;
 }
 
 a {
-    padding: 0 20px;
-    text-decoration: none;
     color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+    font-style: none;
+    text-decoration: none;
 }
-
 .lbtn1 {
     margin: 0 auto;
     display: block;
@@ -191,9 +175,8 @@ a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
 
-}
-
-.lbtn2 {
+  }
+  .lbtn2 {
     margin: 0 auto;
     display: block;
     width: 266px;
@@ -203,8 +186,8 @@ a {
     background-color: rgba(253, 211, 149, 1);
     border: none;
     font-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
-
-}
+    
+  }
 </style>

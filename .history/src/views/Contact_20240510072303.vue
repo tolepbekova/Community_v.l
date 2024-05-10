@@ -1,70 +1,46 @@
 <template>
     <div>
-        <v-app id="header">
-            <v-card color="grey lighten-4" flat height="100px" tile>
-                <v-toolbar dense>
-
-                  <router-link   to="/home"> <img class="logo" src="../assets/logo/log.svg"></router-link>
-
-                    <v-spacer></v-spacer>
-
-                    <span><router-link to="/getstart">Chat</router-link></span>
-                        <span><router-link to="/contact">Contact us</router-link></span>
-                        <span><router-link to="/auth">Login</router-link></span>
-
-                    
-                </v-toolbar>
-            </v-card>
-        </v-app>
-
         <br><br><br>
-
         <div class="abrow">
-            <br><br>
+            <br>
+            <br>
             <div class="abcolu">
                 <img src="../assets/logo/finalicon13_1.svg" alt="">
             </div>
             <div class="abcolu">
-                <h1>Welcome Back</h1>
-                <br>
-                <input type="email" v-model:value="info.email" placeholder="SDU email address">
-                <br><br>
-                <input type="password" v-model:value="info.password" placeholder="Password" required>
-                <br><br>
-                <router-link to="getstart"><button class="btn" @click="login()">Continue</button></router-link>
-                <br><br>
-                <p>Don't have an account? <router-link to="sign in">Sign up</router-link></p>
+                <h1>Contact Us</h1>
+                <div class="abp">
+                    <p>Dear users!</p>
+                    <p>Here you can write inquiries on technical issues, reviews and recommend improvements to the Site
+                    </p>
+                    <br>
+                </div>
+                <div class="inputs">
+                    <form id="contactForm">
+                        <label for="name">Name</label>
+                        <br>
+                        <input type="text" name="name" id="name" placeholder="">
+                        <br>
+                        <label for="mail">Email</label>
+                        <br>
+                        <input type="email" name="mail" id="mail" placeholder="">
+                        <br>
+                        <label for="message">Message</label>
+                        <br>
+                        <input type="text" name="message" id="message">
+                        <br><br><br>
+                        <button class="btn" @click="sendMessage">Send</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
-    data() {
-        return {
-            token: "",
-            info: {
-                email: "",
-                password: "",
-            },
-        };
-    },
-    methods: {
-        login() {
-            axios
-                .post(
-                    ` https://sschat-production.up.railway.app/accounts/auth/token/login/`,
-                    this.info
-                )
-                .then((res) => {
-                    this.token = res.auth_token;
-                });
-        },
-    },
-}; 
+    name: 'HeaderSection' // You can name it as per your requirement
+}
 </script>
 
 <style scoped>
@@ -136,19 +112,11 @@ img {
 }
 
 
-.abp {
-  margin: 0 auto;
-  display: block;
-  width: 670px;
-  height: 100px;
-}
-
 
 .abp {
     margin: 0 auto;
     display: block;
     width: 670px;
-    height: 100px;
 }
 
 .icon {
@@ -167,15 +135,12 @@ img {
 input {
     border-radius: 20px;
     width: 350px;
-    height: 50px;
+    height: 45px;
     border-color: rgba(33, 33, 83, 1);
 }
 
 a {
-    padding: 0 20px;
-    text-decoration: none;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+    color: gold;
 }
 
 .lbtn1 {
@@ -206,5 +171,8 @@ a {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
 
+}
+#message {
+    height: 60px;
 }
 </style>

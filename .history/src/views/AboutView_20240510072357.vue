@@ -109,70 +109,38 @@ export default {
 
 <style>
 h1 {
-    color: rgba(33, 33, 83, 1);
-}
-
-#app {
-    display: flex;
-
-}
-
-#header {
-    display: flex; 
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    color:rgba(33, 33, 83, 1) ;
-}
-
-.logo {
-    width: 270px;
-    height: 77px;
-}
-
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-span  {
-    list-style: none;
-    padding: 0 20px;
-    text-decoration: none;
-    font-size: 30px;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
-}
-
-#navbar li :hover {
-    color: rgba(33, 33, 83, 1);
-}
-h1 {
   color: rgba(33, 33, 83, 1);
 }
 
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 80px;
 
-.abrow {
-  margin: 20px auto;
-  display: block;
-  text-align: center;
-  margin-left: 550px;
 }
 
-.abcolu {
-  margin: 0 auto;
-  display: block;
-  text-align: center;
+#header img {
+  width: 218px;
+  height: 77px;
 }
-a {
-    color: rgba(33, 33, 83, 1);
-    font-style: none;
-    text-decoration: none;
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 30px;
+  color: rgba(33, 33, 83, 1);
+  transition: 0.3s ease;
 }
 
 .chat-container {

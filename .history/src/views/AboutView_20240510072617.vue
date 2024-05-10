@@ -169,11 +169,7 @@ h1 {
   display: block;
   text-align: center;
 }
-a {
-    color: rgba(33, 33, 83, 1);
-    font-style: none;
-    text-decoration: none;
-}
+
 
 .chat-container {
   width: 900px;

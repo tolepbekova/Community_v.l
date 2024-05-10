@@ -35,7 +35,7 @@
             <button class="btn" type="submit">Continue</button>
           </form>
           <br><br>
-          <p>Already have an account? <router-link to="login">Login</router-link></p>
+          <p>Already have an account? <router-link to="log">Login</router-link></p>
         </div>
       </div>
     </section>
@@ -86,11 +86,10 @@ export default {
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 0px;
-    color:rgba(33, 33, 83, 1) ;
 }
 
-.logo {
-    width: 270px;
+#header img {
+    width: 218px;
     height: 77px;
 }
 
@@ -109,7 +108,7 @@ span  {
 }
 
 #navbar li :hover {
-    color: rgba(33, 33, 83, 1);
+    color: rgb(237, 237, 167);
 }
 h1 {
   color: rgba(33, 33, 83, 1);
@@ -163,10 +162,7 @@ input {
 }
 
 a {
-   padding: 0 20px;
-    text-decoration: none;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
+  color: gold;
 }
 
 .lbtn1 {
@@ -197,8 +193,5 @@ a {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
 
-}
-p {
-  font-weight: 100;
 }
 </style>
