@@ -8,7 +8,7 @@
 
                     <v-spacer></v-spacer>
 
-                    <span class="fir"><router-link to="/getstart">Chat</router-link></span>
+                    <span><router-link to="/getstart">Chat</router-link></span>
                         <span><router-link to="/contact">Contact us</router-link></span>
                         <span><router-link to="/auth">Login</router-link></span>
 
@@ -21,8 +21,7 @@
             <br>
             <br>
             <div class="abcolu">
-               
-                <img class="final" src="../assets/logo/finalicon13_1.svg" alt="">
+                <img src="../assets/logo/finalicon13_1.svg" alt="">
             </div>
             <div class="abcolu">
                 <h1>Contact Us</h1>
@@ -85,7 +84,7 @@ h1 {
 .logo {
     width: 270px;
     height: 77px;
-    margin-left: 130px ;
+    margin-left: 70px ;
 }
 
 #navbar {
@@ -93,10 +92,6 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-.fir {
-  margin-left: 130px;
-}
-
 span  {
     list-style: none;
     padding: 0 20px;
@@ -124,7 +119,7 @@ span  {
   text-align: center;
 }
 
-.final {
+img {
   max-width: 99px;
   max-height: 99px;
 }

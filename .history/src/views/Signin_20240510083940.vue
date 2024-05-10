@@ -9,9 +9,8 @@
                   <router-link   to="/home"> <img class="logo" src="../assets/logo/log.svg"></router-link>
 
                     <v-spacer></v-spacer>
-                    <v-spacer></v-spacer>
 
-                    <span class="fir"><router-link to="/getstart">Chat</router-link></span>
+                    <span><router-link to="/getstart">Chat</router-link></span>
                         <span><router-link to="/contact">Contact us</router-link></span>
                         <span><router-link to="/auth">Login</router-link></span>
 
@@ -80,6 +79,7 @@ export default {
 #header {
     display: flex; 
     width: 100%;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     position: fixed;
@@ -92,7 +92,6 @@ export default {
 .logo {
     width: 270px;
     height: 77px;
-    margin-left: 130px ;
 }
 
 #navbar {
@@ -107,7 +106,6 @@ span  {
     font-size: 30px;
     color: rgba(33, 33, 83, 1);
     transition: 0.3s ease;
-
 }
 
 #navbar li :hover {
@@ -116,9 +114,7 @@ span  {
 h1 {
   color: rgba(33, 33, 83, 1);
 }
-.fir {
-  margin-left: 130px;
-}
+
 
 .abrow {
   margin: 20px auto;

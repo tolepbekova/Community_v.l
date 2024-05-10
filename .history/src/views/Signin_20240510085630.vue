@@ -11,7 +11,7 @@
                     <v-spacer></v-spacer>
                     <v-spacer></v-spacer>
 
-                    <span class="fir"><router-link to="/getstart">Chat</router-link></span>
+                    <span><router-link to="/getstart">Chat</router-link></span>
                         <span><router-link to="/contact">Contact us</router-link></span>
                         <span><router-link to="/auth">Login</router-link></span>
 
@@ -92,7 +92,7 @@ export default {
 .logo {
     width: 270px;
     height: 77px;
-    margin-left: 130px ;
+    margin-left: 70px ;
 }
 
 #navbar {
@@ -116,9 +116,7 @@ span  {
 h1 {
   color: rgba(33, 33, 83, 1);
 }
-.fir {
-  margin-left: 130px;
-}
+
 
 .abrow {
   margin: 20px auto;

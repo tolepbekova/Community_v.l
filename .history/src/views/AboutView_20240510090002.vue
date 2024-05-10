@@ -132,7 +132,7 @@ h1 {
 .logo {
     width: 270px;
     height: 77px;
-    margin-left: 130px ;
+    margin-left: 70px ;
 }
 
 #navbar {
