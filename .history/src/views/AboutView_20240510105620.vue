@@ -60,8 +60,8 @@ export default {
         .then(response => {
           if (response) {
             console.log('Ответ от сервера:', response);
-            this.dataList = JSON.parse(JSON.stringify(response.response.content));
-            console.log(this.dataList)
+            this.dataList = JSON.parse(JSON.stringify())
+            console.log(this.messages)
             this.addUserMessage(this.userInput);
             this.userInput = ''; // Clear input field
           }
