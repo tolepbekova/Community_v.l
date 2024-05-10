@@ -119,8 +119,6 @@ h1 {
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    color: rgba(33, 33, 83, 1);
-
  }
     
 .fir {

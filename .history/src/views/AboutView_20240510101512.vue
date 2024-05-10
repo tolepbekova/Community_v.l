@@ -35,79 +35,68 @@
 <script>
 import axios from 'axios';
 
-export default {
+
+  const chatResponses = [
+      "Hello! How can I assist you today?",
+      "Sure, I can help you with that.",
+      "I'm sorry, I didn't quite understand that.",
+      "I'm here to assist you. Ask me anything!",
+      "Let me check on that for you.",
+      " FX is a global decentralized or over-the-counter (OTC) market for the trading of currencies ",
+      "That's an interesting question! Let me find an answer for you.",
+  ];
   
-  data() {
-    return {
-      userInput: '',
-      messages: []
-    };
-  },
-  methods: {
-    
-    sendMessage() {
-      if (this.userInput.trim() === '') return;
-
-      const headers = {
-
-        'Content-Type': 'application/json',
-      };
-      axios.defaults.withCredentials = false
-      console.log(this.userInput)
-      // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-      axios.post(`http://qabot-production.up.railway.app/process_query`, { question: this.userInput })
-        .then(response => {
-          if (response) {
-            console.log('Ответ от сервера:', response);
-            this.addUserMessage(this.userInput);
-            this.userInput = ''; // Clear input field
-          }
-
-
-          // Simulate bot response after a short delay
-          setTimeout(() => {
-            const botResponse = getResponse();
-            addBotMessage(botResponse);
-          }, 500);
-
-        })
-        .catch(error => {
-          console.error('Произошла ошибка:', error);
-        });
-
-
-    },
-    
-    addUserMessage(message) {
+  // Function to generate random response from chatResponses array
+  function getResponse() {
+      const randomIndex = Math.floor(Math.random() * chatResponses.length);
+      return chatResponses[randomIndex];
+  }
+  
+  // Function to add user message to chat box
+  function addUserMessage(message) {
       const chatBox = document.getElementById('chat-box');
       const userMessage = document.createElement('p');
       userMessage.textContent = message;
       userMessage.classList.add('user-message');
       chatBox.appendChild(userMessage);
-    },
-
-    addBotMessage(message) {
+  }
+  
+  // Function to add bot message to chat box
+  function addBotMessage(message) {
       const chatBox = document.getElementById('chat-box');
       const botMessage = document.createElement('p');
       botMessage.textContent = message;
       botMessage.classList.add('bot-message');
       chatBox.appendChild(botMessage);
-    },
-    getResponse() {
-      const chatResponses = [
-        "Hello! How can I assist you today?",
-        "Sure, I can help you with that.",
-        "I'm sorry, I didn't quite understand that.",
-        "I'm here to assist you. Ask me anything!",
-        "Let me check on that for you.",
-        "FX is a global decentralized or over-the-counter (OTC) market for the trading of currencies.",
-        "That's an interesting question! Let me find an answer for you."
-      ];
-      const randomIndex = Math.floor(Math.random() * chatResponses.length);
-      return chatResponses[randomIndex];
-    }
   }
-};
+  
+  // Function to handle user message submission
+  function sendMessage() {
+      const userInput = document.getElementById('user-input').value;
+      const headers = {
+        'Content-Type': 'application/json', 
+      };
+      axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+      axios.post(`https://sschat-production.up.railway.app/posts/api/v1/get_keywords`,{text:'hello'})
+      .then(response => {
+        console.log('Ответ от сервера:');
+      })
+    .catch(error => {
+      console.error('Произошла ошибка:', error);
+    });
+      if (userInput.trim() === '') return;
+      
+      addUserMessage(userInput);
+      document.getElementById('user-input').value = ''; // Clear input field
+  
+      // Simulate bot response after a short delay
+      setTimeout(() => {
+          const botResponse = getResponse();
+          addBotMessage(botResponse);
+      }, 500);
+  
+}
+
 </script>
 
 <style>

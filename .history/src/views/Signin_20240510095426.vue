@@ -114,15 +114,8 @@ span  {
     color: rgba(33, 33, 83, 1);
 }
 h1 {
-  font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    color: rgba(33, 33, 83, 1);
-
- }
-    
+  color: rgba(33, 33, 83, 1);
+}
 .fir {
   margin-left: 430px;
 }

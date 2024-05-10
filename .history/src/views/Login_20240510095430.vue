@@ -27,7 +27,7 @@
             <div class="abcolu">
                 <h1>Welcome Back</h1>
                 <br>
-                <input type="email" v-model:value="info.email" placeholder="SDU email address" required>
+                <input type="email" v-model:value="info.email" placeholder="SDU email address">
                 <br><br>
                 <input type="password" v-model:value="info.password" placeholder="Password" required>
                 <br><br>
@@ -61,12 +61,7 @@ export default {
                 )
                 .then((res) => {
                     this.token = res.auth_token;
-                    localStorage.setItem('id', response.data.id);
-                    this.$router.push('/getstart');
-                })
-                .catch((error) => {
-          console.error('Error:', error);
-        });
+                });
         },
     },
 }; 
@@ -74,14 +69,8 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
     color: rgba(33, 33, 83, 1);
-
- }
+}
 
 #app {
     display: flex;

@@ -61,12 +61,7 @@ export default {
                 )
                 .then((res) => {
                     this.token = res.auth_token;
-                    localStorage.setItem('id', response.data.id);
-                    this.$router.push('/getstart');
-                })
-                .catch((error) => {
-          console.error('Error:', error);
-        });
+                });
         },
     },
 }; 
