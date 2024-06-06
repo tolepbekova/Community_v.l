@@ -1,55 +1,35 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import router from './router/index.js'
-import './assets/base.css'
-</script>
-
 <template>
-    <div id="app">
-        
-         <router-view />
+  <div class="app-container">
+    <MenuBlock />
+    <div class="content-container">
+      <router-view />
     </div>
-   
+  </div>
 </template>
 
+<script>
+import MenuBlock from './components/MenuBlock.vue';
+
+export default {
+  components: {
+    MenuBlock
+  }
+}
+</script>
+
 <style>
-/* #app {
-    display: flex;
-
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
-#header {
-    display: flex; 
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
+.content-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-
-#header img {
-    width: 218px;
-    height: 77px;
-}
-
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-span  {
-    list-style: none;
-    padding: 0 20px;
-    text-decoration: none;
-    font-size: 30px;
-    color: rgba(33, 33, 83, 1);
-    transition: 0.3s ease;
-}
-
-#navbar li :hover {
-    color: rgb(237, 237, 167);
-} */
 </style>
