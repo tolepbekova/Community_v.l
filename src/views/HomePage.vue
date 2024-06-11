@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="msgsend">
-      <input v-model="msginput" class="msginput" type="text" placeholder="Write your message" />
+      <input v-model="msginput" class="msginput" type="text" placeholder="Write your message" @keyup.enter="sendMsg"/>
       <div class="btn" @click="sendMsg">
         <img src="@/assets/send.png" alt="Send" class="send-icon" />
       </div>
@@ -29,89 +29,80 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
   data() {
     return {
-      questions: ['What is Vue?', 'How do I use Vue?', 'What is a component?'],
+      questions: [
+        'How to open the portal if it is closed?',
+        'What period is it possible to make a drop?',
+        'How the GPA is counted?',
+        'What is FX?',
+        'If I lost my scholarship, from what month will it not be received?'
+      ],
       messages: [],
       msginput: ''
-    }
+    };
   },
   computed: {
     showPreview() {
-      return this.msginput.length === 0 && this.messages.length === 0
+      return this.msginput.length === 0 && this.messages.length === 0;
     }
   },
-  created() {
-    if (this.$route.query.success) {
-      console.log(this.$route.query.success)
-      const chatHistoryJSON = localStorage.getItem('chatHistory')
+  mounted() {
+    const userEmail = this.$route.query.email;
+    if (userEmail) {
+      const chatHistoryJSON = localStorage.getItem(`chatHistory_${userEmail}`);
       if (chatHistoryJSON) {
-        this.messages = JSON.parse(chatHistoryJSON)
+        this.messages = JSON.parse(chatHistoryJSON);
       }
     }
   },
   methods: {
-    checkLoginCredentials(username, password) {
-      axios
-        .post(`https://sschat-production.up.railway.app/accounts/auth/token/login/`, {
-          username,
-          password
-        })
-        .then(() => {
-          const chatHistoryJSON = localStorage.getItem('chatHistory')
-          if (chatHistoryJSON) {
-            this.messages = JSON.parse(chatHistoryJSON)
-          }
-        })
-        .catch((error) => {
-          console.error('Error:', error)
-        })
-    },
     selectQuestion(question) {
-      this.msginput = question
+      this.msginput = question;
     },
     sendMsg() {
-      const userInput = this.msginput.trim()
+      const userInput = this.msginput.trim();
       if (userInput) {
-        this.messages.push({ text: userInput, type: 'user' })
+        this.messages.push({ text: userInput, type: 'user' });
 
         axios
-          .post(`https://qabot-production.up.railway.app/process_query/`, {
-            question: userInput
-          })
+          .post('https://qabot-production.up.railway.app/process_query/', { question: userInput })
           .then((res) => {
             if (res && res.data && res.data.response && res.data.response.content) {
-              const botResponse = res.data.response.content
-              this.messages.push({ text: botResponse, type: 'bot' })
-              localStorage.setItem('chatHistory', JSON.stringify(this.messages));
+              const botResponse = res.data.response.content;
+              this.messages.push({ text: botResponse, type: 'bot' });
+
+              const userEmail = this.$route.query.email;
+              localStorage.setItem(`chatHistory_${userEmail}`, JSON.stringify(this.messages));
             }
           })
           .catch((error) => {
-            console.error('An error occurred:', error)
-          })
+            console.error('An error occurred:', error);
+          });
 
-        localStorage.setItem('chatHistory', JSON.stringify(this.messages))
+        const userEmail = this.$route.query.email;
+        localStorage.setItem(`chatHistory_${userEmail}`, JSON.stringify(this.messages));
 
-        this.msginput = ''
+        this.msginput = '';
       }
     }
   }
-}
+};
 </script>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: calc(100vh - 60px); /* Subtract height of MenuBlock */
+  width: 60%;
+  height: calc(100vh - 60px);
   overflow: hidden;
-  padding-top: 60px; /* Space for MenuBlock */
+  padding-top: 60px;
 }
 
 .preview {
@@ -138,8 +129,11 @@ export default {
 
 .questionSpan {
   cursor: pointer;
-  color: #007bff;
+  color: #000;
   transition: color 0.3s;
+  background-color: #F4F4F4;
+  padding: 10px 24px;
+  border-radius: 24px;
 }
 
 .questionSpan:hover {
@@ -151,14 +145,15 @@ export default {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  max-height: 300px;
+  flex-grow: 1;
   overflow-y: auto;
   margin-bottom: 20px;
 }
 
 .user {
   align-self: flex-end;
-  background-color: #d1e7dd;
+  background-color: #212153;
+  color: #fff;
   padding: 10px;
   border-radius: 10px;
   max-width: 60%;
@@ -167,7 +162,7 @@ export default {
 
 .bot {
   align-self: flex-start;
-  background-color: #f8d7da;
+  background-color: #FFD5987A;
   padding: 10px;
   border-radius: 10px;
   max-width: 60%;
@@ -179,6 +174,10 @@ export default {
   align-items: center;
   gap: 10px;
   width: 100%;
+  padding: 10px;
+  background-color: white;
+  position: sticky;
+  bottom: 80px;
 }
 
 .msginput {

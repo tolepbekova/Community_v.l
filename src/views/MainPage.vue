@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="btn" @click="getStart()">
+    <div class="btn-main" @click="getStart()">
       <span>Get Started</span>
     </div>
   </div>
@@ -77,11 +77,13 @@ export default {
 .info img {
   height: 40px;
 }
-.btn {
-  background-color: aquamarine;
+.btn-main {
+  background-color: #212153;
   width: 30%;
   border-radius: 24px;
   color: #fff;
   text-align: center;
+  padding: 10px;
+  cursor: pointer;
 }
 </style>

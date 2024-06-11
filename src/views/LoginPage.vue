@@ -17,9 +17,10 @@
         type="password"
         placeholder="Your password"
       />
+      <span v-if="errorMessage" class="error">{{ errorMessage }}</span>
     </div>
 
-    <div class="btn" @click="login()">
+    <div class="btn-login" @click="login()">
       <span>Login</span>
     </div>
 
@@ -40,33 +41,40 @@ export default {
       info: {
         email: '',
         password: ''
-      }
+      },
+      errorMessage: ''
     }
   },
   methods: {
     login() {
+      this.errorMessage = ''
       axios
         .post(`https://sschat-production.up.railway.app/accounts/auth/token/login/`, this.info)
         .then((res) => {
           this.token = res.data.auth_token
           localStorage.setItem('auth_token', this.token)
 
+          const userDataKey = `userData_${this.info.email}`
           const userData = {
             username: this.info.email,
             password: this.info.password,
-            chatHistory: []
+            chatHistory: JSON.parse(localStorage.getItem(userDataKey))?.chatHistory || []
           }
-          localStorage.setItem('userData', JSON.stringify(userData))
+          localStorage.setItem(userDataKey, JSON.stringify(userData))
 
-          const userDataJSON = localStorage.getItem('userData')
+          const userDataJSON = localStorage.getItem(userDataKey)
           if (userDataJSON) {
-            this.$router.push({ name: 'HomePage', query: { success: true } });
+            this.$router.push({ name: 'HomePage', query: { success: true } })
           } else {
-            console.error('Пользователь не найден.')
+            console.error('User not found.')
           }
         })
         .catch((error) => {
-          console.error('Error:', error)
+          if (error.response && error.response.data) {
+            this.errorMessage = error.response.data.non_field_errors[0]
+          } else {
+            console.error('An unexpected error occurred:', error)
+          }
         })
     },
     onSignUp() {
@@ -108,6 +116,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 20%;
+  border-radius: 14px;
 }
 
 .login-password {
@@ -115,35 +125,45 @@ export default {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  border-radius: 14px;
 }
 
-.btn {
-  background-color: #007bff;
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+  text-align: left;
+  width: 100%;
+}
+
+.btn-login {
+  background-color: #212153;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 0px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 20%;
+  border-radius: 14px;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+.btn-login:hover {
+  background-color: #1d1d4f;
 }
 
 .createBtn {
   display: flex;
-  flex-direction: column;
   gap: 10px;
   margin-top: 20px;
 }
 
 .signUp {
-  color: #007bff;
+  color: #fdd395;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .signUp:hover {
-  color: #0056b3;
+  color: #fdd395;
 }
 </style>

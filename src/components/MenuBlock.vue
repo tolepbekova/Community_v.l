@@ -2,8 +2,8 @@
   <div class="header">
     <img src="@/assets/uni-logo.png" alt="Uni Logo" class="logo" />
     <div class="menu-block">
-      <span>Contact us</span>
-      <span>Sign in</span>
+      <span @click="goContactUs()">Contact us</span>
+      <span @click="goLogin()">Sign in</span>
     </div>
   </div>
 </template>
@@ -12,7 +12,19 @@
 export default {
   data() {
     return {}
-  }
+  },
+   methods: {
+    goContactUs() {
+      this.$router.push({
+        name: 'ContactUsPage'
+      })
+    },
+    goLogin() {
+      this.$router.push({
+        name: 'LoginPage'
+      })
+    }
+   }
 }
 </script>
 
