@@ -2,10 +2,10 @@
   <div class="header">
     <img src="@/assets/uni-logo.png" alt="Uni Logo" class="logo" />
     <div class="menu-block" :class="{ 'menu-open': menuOpen }">
-      <span :class="{ active: $route.name === 'HomePage' }" @click="goChat()">Chat</span>
-      <span :class="{ active: $route.name === 'ContactUsPage' }" @click="goContactUs()"
-        >Contact us</span
-      >
+      <span v-if="isContactUsPage" :class="{ active: $route.name === 'HomePage' }" @click="goChat()">Chat</span>
+      <span :class="{ active: $route.name === 'ContactUsPage' }" @click="goContactUs()">
+        Contact us
+      </span>
       <span :class="{ active: $route.name === 'LoginPage' }" @click="logoutOrSignIn()">
         {{ $route.name === 'HomePage' ? 'Log out' : 'Sign in' }}
       </span>
@@ -19,6 +19,11 @@ export default {
   data() {
     return {
       menuOpen: false
+    }
+  },
+  computed: {
+    isContactUsPage() {
+      return this.$route.name === 'ContactUsPage'
     }
   },
   methods: {
@@ -92,9 +97,9 @@ export default {
     transition: max-height 0.3s ease-out;
     position: absolute;
     left: 0;
-    top: 60px; 
+    top: 60px;
     width: 100%;
-    background-color: #f8f8f8; 
+    background-color: #f8f8f8;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
